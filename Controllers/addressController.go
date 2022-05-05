@@ -11,8 +11,9 @@ import (
 
 func GetAddress(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
+	params := mux.Vars(r)
 	var address [](model.Address)
-	a.DB.Find(&address)
+	a.DB.First(&address, params["id"])
 	json.NewEncoder(w).Encode(address)
 }
 

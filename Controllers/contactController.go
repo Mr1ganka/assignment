@@ -9,10 +9,11 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func AddContact(w http.ResponseWriter, r *http.Request) {
+func GetContact(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
+	params := mux.Vars(r)
 	var con [](model.Contact)
-	a.DB.Find(&con)
+	a.DB.First(&con, params["id"])
 	json.NewEncoder(w).Encode(con)
 }
 

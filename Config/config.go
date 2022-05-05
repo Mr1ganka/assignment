@@ -23,6 +23,6 @@ func InitialMigration() {
 		fmt.Println(err.Error())
 		panic("Cannot connect to DB") // exception that arises as runtime
 	}
-	DB.Migrator().DropTable(&model.Account{}, &model.Address{}, &model.Contact{})
+	//DB.Migrator().DropTable(&model.Account{}, &model.Address{}, &model.Contact{})
 	DB.AutoMigrate(&model.Account{}, &model.Address{}, &model.Contact{})
 }

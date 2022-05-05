@@ -22,8 +22,8 @@ func InitializeRouter() {
 	r.HandleFunc("/address/{id}", a.GetAddress).Methods("GET")
 	r.HandleFunc("/address/{id}", a.UpdateAddress).Methods("PUT")
 
-	r.HandleFunc("/address/{id}", a.AddContact).Methods("POST")
-	r.HandleFunc("/address/{id}", a.UpdateContact).Methods("PUT")
+	r.HandleFunc("/contact/{id}", a.GetContact).Methods("GET")
+	r.HandleFunc("/contact/{id}", a.UpdateContact).Methods("PUT")
 
 	fmt.Println("Routes and Controllers have been established")
 	fmt.Println("Use Postman for checking")
