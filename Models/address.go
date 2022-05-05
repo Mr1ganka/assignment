@@ -5,7 +5,7 @@ package model
 // )
 
 type Address struct {
-	Id        uint   `json:"-"`
+	Id        uint   `gorm:"references:AccountId"`
 	Street    string `json:"street"`
 	Apartment string `json:"apartment"`
 	City      string `json:"city"`
